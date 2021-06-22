@@ -56,6 +56,8 @@ RUN apt-get update && \
     apt-get install -y python3-pip && \
     apt-get install -y mercurial && \
     apt-get install -y zip && \
+    apt-get install -y iputils-ping && \
+    apt-get install -y xvfb && \
     apt-get install lsof && \
     apt-get clean && \
     echo "alias python3.3='/usr/bin/python3'" >> /root/.bashrc;
