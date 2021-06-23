@@ -76,7 +76,7 @@ RUN wget https://repo.almalinux.org/almalinux/8.3-beta/AppStream/x86_64/os/Packa
     ln -s /usr/lib64/libpng15.so.15 /lib/x86_64-linux-gnu/libpng15.so.15 && \
     ln -s /usr/lib64/libunique-3.0.so.0 /lib/x86_64-linux-gnu/libunique-3.0.so.0 && \
     ln -s /usr/lib64/libnotify.so.4 /lib/x86_64-linux-gnu/libnotify.so.4 && \
-    rm libpng15-1.5.30-7.el8.x86_64.rpm libunique3.0_0-3.0.2-alt1_14.x86_64.rpm
+    rm libpng15-1.5.30-7.el8.x86_64.rpm libunique3.0_0-3.0.2-alt1_14.x86_64.rpm libnotify-0.7.9-alt1.x86_64.rpm
     
 ENV DISPLAY :1
 RUN export DISPLAY
