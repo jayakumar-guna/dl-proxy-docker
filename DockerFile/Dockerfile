@@ -57,7 +57,6 @@ RUN apt-get update && \
     apt-get install -y mercurial && \
     apt-get install -y zip && \
     apt-get install -y iputils-ping && \
-    apt-get install -y libnotify-dev && \
     apt-get install -y libenchant-dev && \
     apt-get install -y libgtk-3-0 && \
     apt-get install -y libgtksourceview-3.0-dev && \
@@ -76,7 +75,7 @@ RUN wget https://repo.almalinux.org/almalinux/8.3-beta/AppStream/x86_64/os/Packa
     ln -s /usr/lib64/libunique-3.0.so.0 /lib/x86_64-linux-gnu/libunique-3.0.so.0 && \
     rm libpng15-1.5.30-7.el8.x86_64.rpm libunique3.0_0-3.0.2-alt1_14.x86_64.rpm
     
-ENV DISPLAY=:1
+ENV DISPLAY :1
 RUN export DISPLAY
     
 # Install newman
