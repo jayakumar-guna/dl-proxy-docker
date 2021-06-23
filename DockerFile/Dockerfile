@@ -57,6 +57,8 @@ RUN apt-get update && \
     apt-get install -y mercurial && \
     apt-get install -y zip && \
     apt-get install -y iputils-ping && \
+    apt-get install -y libnotify-dev && \
+    apt-get install -y libenchant-dev &&\
     apt-get install -y libgtk-3-0 && \
     apt-get install -y xvfb && \
     apt-get install lsof && \
