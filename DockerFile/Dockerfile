@@ -61,6 +61,7 @@ RUN apt-get update && \
     apt-get install -y libgtk-3-0 && \
     apt-get install -y libgtksourceview-3.0-dev && \
     apt-get install -y libcroco-tools && \
+    apt-get install -y libdbus-glib-1-2 && \
     apt-get install -y alien && \
     apt-get install -y xvfb && \
     apt-get install lsof && \
