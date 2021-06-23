@@ -58,12 +58,26 @@ RUN apt-get update && \
     apt-get install -y zip && \
     apt-get install -y iputils-ping && \
     apt-get install -y libnotify-dev && \
-    apt-get install -y libenchant-dev &&\
+    apt-get install -y libenchant-dev && \
     apt-get install -y libgtk-3-0 && \
+    apt-get install -y libgtksourceview-3.0-dev && \
+    apt-get install -y libcroco-tools && \
+    apt-get install -y alien && \
     apt-get install -y xvfb && \
     apt-get install lsof && \
     apt-get clean && \
     echo "alias python3.3='/usr/bin/python3'" >> /root/.bashrc;
+    
+RUN wget https://repo.almalinux.org/almalinux/8.3-beta/AppStream/x86_64/os/Packages/libpng15-1.5.30-7.el8.x86_64.rpm && \
+    wget http://ftp.altlinux.org/pub/distributions/ALTLinux/Sisyphus/x86_64/RPMS.classic/libunique3.0_0-3.0.2-alt1_14.x86_64.rpm && \
+    alien -i libpng15-1.5.30-7.el8.x86_64.rpm && \
+    alien -i libunique3.0_0-3.0.2-alt1_14.x86_64.rpm && \
+    ln -s /usr/lib64/libpng15.so.15 /lib/x86_64-linux-gnu/libpng15.so.15 && \
+    ln -s /usr/lib64/libunique-3.0.so.0 /lib/x86_64-linux-gnu/libunique-3.0.so.0 && \
+    rm libpng15-1.5.30-7.el8.x86_64.rpm libunique3.0_0-3.0.2-alt1_14.x86_64.rpm
+    
+ENV DISPLAY=:1
+RUN export DISPLAY
     
 # Install newman
 RUN apt-get install aptitude -y && \
