@@ -69,10 +69,13 @@ RUN apt-get update && \
     
 RUN wget https://repo.almalinux.org/almalinux/8.3-beta/AppStream/x86_64/os/Packages/libpng15-1.5.30-7.el8.x86_64.rpm && \
     wget http://ftp.altlinux.org/pub/distributions/ALTLinux/Sisyphus/x86_64/RPMS.classic/libunique3.0_0-3.0.2-alt1_14.x86_64.rpm && \
+    wget http://ftp.altlinux.org/pub/distributions/ALTLinux/Sisyphus/x86_64/RPMS.classic/libnotify-0.7.9-alt1.x86_64.rpm && \
     alien -i libpng15-1.5.30-7.el8.x86_64.rpm && \
     alien -i libunique3.0_0-3.0.2-alt1_14.x86_64.rpm && \
+    alien -i libnotify-0.7.9-alt1.x86_64.rpm && \
     ln -s /usr/lib64/libpng15.so.15 /lib/x86_64-linux-gnu/libpng15.so.15 && \
     ln -s /usr/lib64/libunique-3.0.so.0 /lib/x86_64-linux-gnu/libunique-3.0.so.0 && \
+    ln -s /usr/lib64/libnotify.so.4 /lib/x86_64-linux-gnu/libnotify.so.4 && \
     rm libpng15-1.5.30-7.el8.x86_64.rpm libunique3.0_0-3.0.2-alt1_14.x86_64.rpm
     
 ENV DISPLAY :1
