@@ -65,8 +65,12 @@ RUN apt-get update && \
     apt-get install -y alien && \
     apt-get install -y xvfb && \
     apt-get install lsof && \
+    apt-get install locales && \
     apt-get clean && \
+    locale-gen en_US.UTF-8 && \
     echo "alias python3.3='/usr/bin/python3'" >> /root/.bashrc;
+ENV LC_ALL en_US.UTF-8
+RUN export LC_ALL
     
 RUN wget https://repo.almalinux.org/almalinux/8.3-beta/AppStream/x86_64/os/Packages/libpng15-1.5.30-7.el8.x86_64.rpm && \
     wget http://ftp.altlinux.org/pub/distributions/ALTLinux/Sisyphus/x86_64/RPMS.classic/libunique3.0_0-3.0.2-alt1_14.x86_64.rpm && \
